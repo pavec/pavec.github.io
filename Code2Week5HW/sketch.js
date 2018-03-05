@@ -17,26 +17,27 @@ function draw() {
   scenes[currentScene].display();
 
   fill(0);
-  textSize(24);
+  // textSize(24);
   text("press the option number to advance to the indicated scene", 50, 700);
 }
 
 function CreateScenesFromData(data) {
   for (var i = 0; i < data.length; i++) {
-    scenes.push(new Scene(data[i].sceneText, data[i].options, data[i].nextScenes))
+    scenes.push(new Scene(data[i].sceneText, data[i].options, data[i].nextScenes, data[i].col, data[i].textSize))
   }
 }
 
-function Scene(sceneText, options, nextScenes, color) {
+function Scene(sceneText, options, nextScenes, color, textSize) {
   this.sceneText = sceneText;
   this.options = options;
   this.nextScenes = nextScenes;
-  this.color = color;
+  this.col = col;
+  this.textSize = textSize;
 
 
   this.display = function() {
-    fill(this.color);
-    textSize(32);
+    fill(this.col);
+    textSize(this.textSize);
     text(this.sceneText, 100, 100);
 
     for (var i = 0; i < options.length; i++) {
