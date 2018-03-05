@@ -27,13 +27,15 @@ function CreateScenesFromData(data) {
   }
 }
 
-function Scene(sceneText, options, nextScenes) {
+function Scene(sceneText, options, nextScenes, color) {
   this.sceneText = sceneText;
   this.options = options;
   this.nextScenes = nextScenes;
+  this.color = color;
+
 
   this.display = function() {
-    fill(0);
+    fill(this.color);
     textSize(32);
     text(this.sceneText, 100, 100);
 
