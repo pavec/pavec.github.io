@@ -1,36 +1,36 @@
 {
   "scenes": [
     {
-      "sceneText": "This is scene 0",
-      "options": ["go to scene 1"],
+      "sceneText": "You have stumbled upon a castle",
+      "options": ["enter the castle"],
       "nextScenes": [1],
       "col": [(random(255), 0, 0)],
       "textSize": [(random(10,20))]
     },
     {
-      "sceneText": "This is scene 1",
-      "options": ["go to scene 2", "go to scene 3"],
+      "sceneText": "You chose to enter the foyer",
+      "options": ["explore the upstairs", "explore the ballroom"],
       "nextScenes": [2, 3],
       "col": [(0, random(255), 0)],
       "textSize": [(random(20,30))]
     },
     {
-      "sceneText": "This is scene 2",
-      "options": ["go to scene 3", "go to scene 4"], 
+      "sceneText": "You are now upstairs",
+      "options": ["explore the ballroom", "go into the attic"], 
       "nextScenes": [3, 4],
       "col": [(0, 0, random(255))], 
       "textSize": [(random(30,40))]
     },
     {
-      "sceneText": "This is scene 3",
-      "options": ["go to scene 4", "go to scene 0"],
+      "sceneText": "You are now in the ballroom",
+      "options": ["go back into the attic", "leave the castle"],
       "nextScenes": [4, 0], 
       "col": [(random(255), 0, random(255))], 
       "textSize": [(random(40,50))]
     },
     {
-      "sceneText": "This is scene 4",
-      "options": ["go to scene 0", "go to scene 1", "go to scene 2", "go to scene 3"],
+      "sceneText": "You are now in the attic",
+      "options": ["leave the castle", "go back to the foyer", "go back to the second level", "go back to the ballroom"],
       "nextScenes": [0, 1, 2, 3], 
       "col": [(0, random(255), random(255))], 
       "textSize": [(random(50,60))]
