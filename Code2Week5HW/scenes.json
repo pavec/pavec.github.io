@@ -3,37 +3,37 @@
     {
       "sceneText": "You have stumbled upon a castle",
       "options": ["enter the castle"],
-      "nextScenes": [1],
-      "col": [(random(255), 0, 0)],
-      "textSize": [(random(10,20))]
+      "nextScenes": [1]
+      // "col": [(random(255), 0, 0)],
+      // "textSize": [(random(10,20))]
     },
     {
       "sceneText": "You chose to enter the foyer",
       "options": ["explore the upstairs", "explore the ballroom"],
-      "nextScenes": [2, 3],
-      "col": [(0, random(255), 0)],
-      "textSize": [(random(20,30))]
+      "nextScenes": [2, 3]
+      // "col": [(0, random(255), 0)],
+      // "textSize": [(random(20,30))]
     },
     {
       "sceneText": "You are now upstairs",
       "options": ["explore the ballroom", "go into the attic"], 
-      "nextScenes": [3, 4],
-      "col": [(0, 0, random(255))], 
-      "textSize": [(random(30,40))]
+      "nextScenes": [3, 4]
+      // "col": [(0, 0, random(255))], 
+      // "textSize": [(random(30,40))]
     },
     {
       "sceneText": "You are now in the ballroom",
       "options": ["go back into the attic", "leave the castle"],
-      "nextScenes": [4, 0], 
-      "col": [(random(255), 0, random(255))], 
-      "textSize": [(random(40,50))]
+      "nextScenes": [4, 0]
+      // "col": [(random(255), 0, random(255))], 
+      // "textSize": [(random(40,50))]
     },
     {
       "sceneText": "You are now in the attic",
       "options": ["leave the castle", "go back to the foyer", "go back to the second level", "go back to the ballroom"],
-      "nextScenes": [0, 1, 2, 3], 
-      "col": [(0, random(255), random(255))], 
-      "textSize": [(random(50,60))]
+      "nextScenes": [0, 1, 2, 3]
+      // "col": [(0, random(255), random(255))], 
+      // "textSize": [(random(50,60))]
     }
   ]
 }
