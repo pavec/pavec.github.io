@@ -1,0 +1,42 @@
+{
+  "scenes": [
+    {
+      "sceneText": "You have stumbled upon a castle",
+      "options": ["enter the castle"],
+      "nextScenes": [1],
+      "interaction": []
+      
+    },
+    {
+      "sceneText": "You chose to enter the foyer",
+      "options": ["explore the upstairs", "explore the ballroom", "leave the castle"],
+      "nextScenes": [2, 3, 0],
+      "interaction": []
+    },
+    {
+      "sceneText": "You are now upstairs",
+      "options": ["go back to the foyer", "go into the attic", "explore a bedroom"], 
+      "nextScenes": [1, 4, 5],
+      "interaction": []
+    },
+    {
+      "sceneText": "You are now in the ballroom",
+      "options": ["go back to the foyer"],
+      "nextScenes": [0],
+      "interaction": []
+    },
+    {
+      "sceneText": "You are now in the attic",
+      "options": ["leave the castle", "go back to the foyer", "go back to the upstairs level"],
+      "nextScenes": [0, 1, 2],
+      "interaction": []
+    },
+    {
+      "sceneText": "You are now in the bedroom",
+      "options": ["go back to the upstairs level"], 
+      "nextScenes": [2],
+      "interaction": []
+    }
+    
+  ]
+}
