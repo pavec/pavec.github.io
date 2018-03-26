@@ -5,7 +5,7 @@ var img;
 
 function preload(){
   sceneData = loadJSON('code2midterm-datamodelex.json');
-  img = loadImage('castle-trail-wallpaper-abstract.jpg');
+  img = loadImage("castle-trail-wallpaper-abstract.jpg");
 }
 
 function setup() {
