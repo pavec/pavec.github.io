@@ -22,9 +22,9 @@ function draw() {
   textSize(24);
   text(sceneText);
 
-  // for(var i = 0; i < Scene.length; i++){
-  //   Scene[i].mousehit();
-  // }
+  for(var i = 0; i < Scene.length; i++){
+    Scene[i].mousehit();
+  }
 
   // for (var i = 0; i < character.length; i++) {
   //   character[i].display(mouseX, mouseY);
