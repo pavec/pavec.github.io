@@ -25,14 +25,7 @@ function draw() {
   for(var i = 0; i < Scene.length; i++){
     Scene[i].mousehit();
   }
-
-  // for (var i = 0; i < character.length; i++) {
-  //   character[i].display(mouseX, mouseY);
-    // character[i].display();
-
-  // }
 }
-
 
 function CreateScenesFromData(data){
   for(var i = 0; i < data.length; i++){
@@ -49,7 +42,6 @@ function Scene(sceneText, background, options, nextScenes, objects, responses){
   this.objects = objects;
   this.responses = responses;
  
-
   this.display = function() {
     text(this.sceneText, 100, 100);
     for (var i = 0; i < options.length; i++) {
@@ -59,36 +51,14 @@ function Scene(sceneText, background, options, nextScenes, objects, responses){
     for (var i = 0; i < objects.length; i++) {
       text('LOCATION OBJECTS' + (i + 2) + ': ' + this.objects[i], 200, 250 + i * 60);
       this.mousehit = function(){
-      this.responses.display();
+      this.responses[i].display();
       }
     }
   }
- 
 }
 
-// function character(position) {
-//   this.position = position;
-
-//   this.display = function() {
-//     noStroke();
-//     fill(random(255), 0, random(255));
-//     ellipse(this.position.x, this.position.y, 100, 100);
-//   }
-// }
-
 function keyPressed() {
-  // if (key === 'W') {
-  //   character.position.y --;
-  // }
-  // if (key === 'A') {
-  //   character.position.x --;
-  // }
-  // if (key === 'S') {
-  //   character.position.y ++;
-  // }
-  // if (key === 'D') {
-  //   character.position.x ++;
-  // }
+
   var numberPressed = parseInt(key);
   var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
   if (newScene !== undefined) {
