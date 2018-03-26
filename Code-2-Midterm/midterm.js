@@ -22,7 +22,7 @@ function draw() {
   textSize(24);
   text(sceneText);
 
-  for(var i = 0; i < Scene[].length; i++){
+  for(var i = 0; i < Scene.length; i++){
     Scene[i].mousehit();
   }
 
