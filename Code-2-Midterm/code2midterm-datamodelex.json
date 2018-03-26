@@ -3,39 +3,50 @@
     {
       "sceneText": "You have stumbled upon a castle",
       "options": ["enter the castle"],
+      "background": ["outside"],
       "nextScenes": [1],
-      "interaction": []
-      
+      "objects": ["doorbell"],
+      "responses": ["No one answered..."]      
     },
     {
       "sceneText": "You chose to enter the foyer",
       "options": ["explore the upstairs", "explore the ballroom", "leave the castle"],
+      "background": ["castle.foyer"],
       "nextScenes": [2, 3, 0],
-      "interaction": []
+      "objects": ["phone"],
+      "responses": ["Seems the phone isn't working, might as well look around."]
     },
     {
       "sceneText": "You are now upstairs",
       "options": ["go back to the foyer", "go into the attic", "explore a bedroom"], 
+      "background": ["castle.upstairs"],
       "nextScenes": [1, 4, 5],
-      "interaction": []
+      "objects": ["picture"],
+      "responses": ["The person in that picture looks familiar."]
     },
     {
       "sceneText": "You are now in the ballroom",
       "options": ["go back to the foyer"],
+      "background": ["castle.ballroom"],
       "nextScenes": [0],
-      "interaction": []
+      "objects": ["chandelier", "note on table"],
+      "responses": ["Hm, dusty. Looks like no one has been here in a while.", "A letter on the table gives you a clue that the owner was very old."]
     },
     {
       "sceneText": "You are now in the attic",
       "options": ["leave the castle", "go back to the foyer", "go back to the upstairs level"],
+      "background": ["castle.attic"],
       "nextScenes": [0, 1, 2],
-      "interaction": []
+      "objects": ["paper"],
+      "responses": ["Looks like a will, it instructs you to look for an envelope."]
     },
     {
       "sceneText": "You are now in the bedroom",
       "options": ["go back to the upstairs level"], 
+      "background": ["castle.bedroom"],
       "nextScenes": [2],
-      "interaction": []
+      "objects": ["chest","deed"],
+      "responses": ["There are some very old valuable items in here.","You found the deed to the castle, it now belongs to you."]
     }
     
   ]
