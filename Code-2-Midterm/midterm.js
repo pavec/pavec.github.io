@@ -9,7 +9,6 @@ function preload(){
 function setup() {
   createCanvas(800, 800);
   CreateScenesFromData(sceneData.scenes);
-  ellipse(mouseX, mouseY, 30, 30);
 }
 
 function draw() {
@@ -53,7 +52,7 @@ function Scene(sceneText, background, options, nextScenes, objects, responses){
     }
     text(this.objects, 150, 150);
     for (var i = 0; i < objects.length; i++) {
-      text('LOCATION OBJECTS' + (i + 1) + ': ' + this.objects[i], 150, 200 + i * 50);
+      text('LOCATION OBJECTS' + (i + 2) + ': ' + this.objects[i], 200, 250 + i * 60);
       this.mousehit = function(){
       this.responses.display();
       }
