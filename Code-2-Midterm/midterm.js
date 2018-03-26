@@ -18,18 +18,22 @@ function draw() {
   fill(0);
   textSize(24);
   text(sceneText);
+  for(var i = 0; i < Scene.length; i++){
+    Scene[i].mousehit();
+  }
 
   // var character = ellipse(position.x, position.y, 20, 20);
   // for (var i = 0; i < character.length; i++) {
   //   character[i].display(mouseX, mouseY);
     // character[i].display();
 
-  }
+  // }
 }
 
 function CreateScenesFromData(data){
   for(var i = 0; i < data.length; i++){
     scenes.push(new Scene (data[i].sceneText, data[i].background, data[i].options, data[i].nextScenes, data[i].objects, data[i].responses));
+    
   }
 }
 
@@ -50,8 +54,12 @@ function Scene(sceneText, background, options, nextScenes, objects, responses){
     text(this.objects, 150, 150);
     for (var i = 0; i < objects.length; i++) {
       text('LOCATION OBJECTS' + (i + 1) + ': ' + this.objects[i], 150, 200 + i * 50);
+      this.mousehit = function(){
+      this.responses.display();
+      }
     }
   }
+ 
 }
 
 // function character(position) {
