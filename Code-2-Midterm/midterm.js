@@ -1,23 +1,28 @@
 var sceneData;
 var currentScene = 0;
 var scenes = [];
+var img;
 
 function preload(){
   sceneData = loadJSON('code2midterm-datamodelex.json');
+  img = loadImage('castle-trail-wallpaper-abstract.jpg');
 }
 
 function setup() {
   createCanvas(800, 800);
   CreateScenesFromData(sceneData.scenes);
+  image(img, 0, 0);
 }
 
 function draw() {
-  background(255);
+
+  background(100);
   scenes[currentScene].display();
   fill(0);
   textSize(24);
   text(sceneText);
-  for(var i = 0; i < Scene.length; i++){
+
+  for(var i = 0; i < Scene[].length; i++){
     Scene[i].mousehit();
   }
 
@@ -28,6 +33,7 @@ function draw() {
 
   // }
 }
+
 
 function CreateScenesFromData(data){
   for(var i = 0; i < data.length; i++){
