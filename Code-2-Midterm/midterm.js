@@ -11,7 +11,7 @@ function preload(){
 function setup() {
   createCanvas(800, 800);
   CreateScenesFromData(sceneData.scenes);
-  image(img, 0, 0);
+  image(img, 100, 100);
 }
 
 function draw() {
