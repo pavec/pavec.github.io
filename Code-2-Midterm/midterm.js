@@ -20,11 +20,11 @@ function draw() {
   scenes[currentScene].display();
   fill(0);
   textSize(24);
-  text(sceneText);
+  // text(sceneText);
 
-  for(var i = 0; i < Scene.length; i++){
-    Scene[i].mousehit();
-  }
+  // for (var i = 0; i < scenes.length; i++){
+  //   scenes[i].mousehit();
+  // }
 }
 
 function CreateScenesFromData(data){
@@ -47,17 +47,27 @@ function Scene(sceneText, background, options, nextScenes, objects, responses){
     for (var i = 0; i < options.length; i++) {
       text('OPTION ' + (i + 1) + ': ' + this.options[i], 150, 200 + i * 50);
     }
-    text(this.objects, 150, 150);
+    // text(this.objects, 150, 250);
     for (var i = 0; i < objects.length; i++) {
-      text('LOCATION OBJECTS' + (i + 2) + ': ' + this.objects[i], 200, 250 + i * 60);
-      this.mousehit = function(){
-      this.responses[i].display();
-      }
+      text('OBJECT ' + (i + 1) + ': ' + this.objects[i], 200, 200 + (options.length - 1) * 50 + 200 + i * 60);
+      // this.mousehit = function(){
+      //   this.responses[i].display();
+      // }
     }
+
+    var responsePicked = -1;
+    text(this.responses[responsePicked], 0, 50);
   }
 }
 
 function keyPressed() {
+
+if(key === 'W'){
+  responsePicked = 0;
+}
+if(key === 'S'){
+  responsePicked = 1;
+}
 
   var numberPressed = parseInt(key);
   var newScene = scenes[currentScene].nextScenes[numberPressed - 1];
