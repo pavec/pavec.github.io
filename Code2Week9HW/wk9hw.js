@@ -22,7 +22,7 @@ function gotWords(data){
 
 }
 
-function askWordnik((){
+function askWordnik(){
 	var index1 = floor(random(0, data.length));
 	var index2 = floor(random(0, data[index1].words.length));
 	word = data[index1].words[index2];
