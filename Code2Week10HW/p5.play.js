@@ -38,7 +38,7 @@ factory(root.p5);
 // This is the new way to initialize custom p5 properties for any p5 instance.
 // The goal is to migrate lazy P5 properties over to this method.
 // @see https://github.com/molleindustria/p5.play/issues/46
-p5.prototype.registerMethod('init', function p5PlayInit() {
+// p5.prototype.registerMethod('init', function p5PlayInit() {
   /**
    * The sketch camera automatically created at the beginning of a sketch.
    * A camera facilitates scrolling and zooming for scenes extending beyond
@@ -52,9 +52,9 @@ p5.prototype.registerMethod('init', function p5PlayInit() {
    * @property camera
    * @type {camera}
    */
-  this.camera = new Camera(this, 0, 0, 1);
-  this.camera.init = false;
-});
+//   this.camera = new Camera(this, 0, 0, 1);
+//   this.camera.init = false;
+// });
 
 // This provides a way for us to lazily define properties that
 // are global to p5 instances.
