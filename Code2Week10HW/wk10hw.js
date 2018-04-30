@@ -33,8 +33,6 @@
 //   gif.position.y = mouseY;
 // }
 
-
-CREATING NEW BOUNCING SPRITES ON CLICK
 function setup() {
   createCanvas(400, 400);
 }
