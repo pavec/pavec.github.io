@@ -12,6 +12,10 @@ var ferguson;
 
 function preload(){
 	levelData = loadJSON('code2final-scenes.json');
+	ferguson = loadAnimation("ferguson-idle1.png", "ferguson-idle2.png", 
+			"ferguson-idle3.png", "ferguson-idle4.png", "ferguson-idle5.png", 
+			"ferguson-idle6.png", "ferguson-idle7.png", "ferguson-idle8.png", 
+			"ferguson-idle9.png");
 }
 
 function setup(){
@@ -23,18 +27,28 @@ function draw(){
 	background(255);
 	levels[currentLevel].display();
 	fill(0);
-	textSize(18)
+	textSize(18);
+	var x = 200;
+	var y = 600;
 	if(playerUp){
 		//ferguson up
+		animation(ferguson, x, y);
+		y++;
 	}
 	if(playerDown){
 		//ferguson down
+		animation(ferguson, x, y);
+		y--;
 	}
 	if(playerLeft){
 		//ferguson left
+		animation(ferguson, x, y);
+		x--;
 	}
 	if(playerRight){
 		//ferguson right
+		animation(ferguson, x, y);
+		x++;
 	}
 }
 
