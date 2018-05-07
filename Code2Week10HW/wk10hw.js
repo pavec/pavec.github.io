@@ -1,36 +1,41 @@
-
-
-
+var coins;
+var player;
+var score = 0;
 function setup() {
   createCanvas(400, 400);
-
-
+  coins = new Group();
+  for (var i = 0; i < 10; i++) {
+    var c = createSprite(
+      random(100, width-100),
+      random(100, height-100),
+      10, 10);
+    c.shapeColor = color(255, 255, 0);
+    coins.add(c);
+  }
+  player = createSprite(50, 50, 40, 40);
+  player.shapeColor = color(255);
 }
 function draw() {
   background(50);
-  for (var i = 0; i < allGifs.length; i++) {
-    allGifs[i].addSpeed(0.1, 90);
-    if (allGifs[i].position.y > height) {
-      allGifs[i].velocity.y *= -1;
-    }
-    if (allGifs[i].position.x > width ||
-        allGifs[i].position.x < 0) {
-      allGifs[i].remove();
-    }
+  player.velocity.x = 
+    (mouseX-player.position.x)*0.1;
+  player.velocity.y = 
+    (mouseY-player.position.y)*0.1;
+  player.overlap(coins, getCoin);
+  drawSprites();
+  fill(255);
+  noStroke();
+  textSize(72);
+  textAlign(CENTER, CENTER);
+  if (coins.length > 0) {
+    text(score, width/2, height/2);
   }
-  textAlign(RIGHT, TOP);
-  text("sprite count: " + allGifs.length,
-    width-10, 10);
-  drawGifs();
+  else {
+    text("you win!", width/2, height/2);
+  }
 }
-function mousePressed() {
-  var gif = createSprite(width/2, height/2,
-    random(10, 50), random(10, 50));
-  gif.Color = color(255);
-  gif.velocity.y = random(3);
-  gif.velocity.x = random(-3, 3);
-  gif.position.x = mouseX;
-  gif.position.y = mouseY;
+function getCoin(player, coin) {
+  coin.remove();
+  score += 1;
 }
-
 
