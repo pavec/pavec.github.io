@@ -16,6 +16,10 @@ function preload(){
 			"ferguson-idle3.png", "ferguson-idle4.png", "ferguson-idle5.png", 
 			"ferguson-idle6.png", "ferguson-idle7.png", "ferguson-idle8.png", 
 			"ferguson-idle9.png");
+	fergusonMoving = loadAnimation("ferguson-walk1.png", "ferguson-walk2.png", 
+			"ferguson-walk3.png", "ferguson-walk4.png", "ferguson-walk5.png", 
+			"ferguson-walk6.png", "ferguson-walk7.png", "ferguson-walk8.png", 
+			"ferguson-walk9.png", "ferguson-walk10.png");
 }
 
 function setup(){
@@ -32,23 +36,23 @@ function draw(){
 	var y = 600;
 	if(playerUp){
 		//ferguson up
-		animation(ferguson, x, y);
+		animation(fergusonMoving, x, y);
 		y++;
-	}
-	if(playerDown){
+	}else if(playerDown){
 		//ferguson down
-		animation(ferguson, x, y);
+		animation(fergusonMoving, x, y);
 		y--;
-	}
-	if(playerLeft){
+	}else if(playerLeft){
 		//ferguson left
-		animation(ferguson, x, y);
+		animation(fergusonMoving, x, y);
 		x--;
-	}
-	if(playerRight){
+	}else if(playerRight){
 		//ferguson right
-		animation(ferguson, x, y);
+		animation(fergusonMoving, x, y);
 		x++;
+	}else {
+		//idle anim, still on screen
+		animation(ferguson, x, y);
 	}
 }
 
