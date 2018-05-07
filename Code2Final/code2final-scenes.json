@@ -1,0 +1,29 @@
+{
+  "scenes": [
+    {
+      "levelText": "Welcome",
+      // "instructions": [""],
+      //use button for start
+      "nextLevel": [1]
+    },
+    {
+      "levelText": "Level 1",
+      "instructions": ["collect all objects to advance"],
+      "nextLevel": [2]
+    },
+    {
+      "levelText": "Level 2",
+      "instrLevel": [3] 
+    },
+    {
+      "levelText": "Level 3",
+      "instructions": [""],
+      "nextLevel": [4]
+    },
+    {
+      "levelText": "Final Level",
+      "instructions": [""],
+      "nextLevel": [0]
+    }
+  ]
+}
