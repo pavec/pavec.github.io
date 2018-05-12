@@ -68,7 +68,7 @@ function Level (levelText, instructions, nextLevel){
 	this.nextLevel = nextLevel;
 	this.display = function(){
 		text(levelText, 80, 80);
-		for(var i = 0; i < instructions.length, i++){
+		for(var i = 0; i < instructions.length; i++){
 			text('' + this.instructions[i], 100, 150 + i * 50);
 		}
 
