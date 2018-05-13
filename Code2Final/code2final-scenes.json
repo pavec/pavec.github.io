@@ -2,8 +2,6 @@
   "scenes": [
     {
       "levelText": "Welcome",
-      // "instructions": [""],
-      //use button for start
       "nextLevel": [1]
     },
     {
@@ -13,7 +11,8 @@
     },
     {
       "levelText": "Level 2",
-      "instrLevel": [3] 
+      "instructions": [""],
+      "nextLevel": [3] 
     },
     {
       "levelText": "Level 3",
