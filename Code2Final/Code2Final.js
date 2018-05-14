@@ -2,12 +2,12 @@ var levelData;
 var currentLevel = 0;
 var levels = [];
 
-var playerUp = false;
-var playerDown = false;
-var playerLeft = false;
-var playerRight = false;
-
+var objects;
 var ferguson;
+var score = 0;
+var flowerMonsters;
+var flower;
+var leaves;
 
 var sceneState = {
 	START: 0,
@@ -19,49 +19,59 @@ var sceneState = {
 
 function preload(){
 	levelData = loadJSON('code2final-scenes.json');
-	ferguson = loadAnimation("ferguson-idle1.png", "ferguson-idle2.png", 
-			"ferguson-idle3.png", "ferguson-idle4.png", "ferguson-idle5.png", 
-			"ferguson-idle6.png", "ferguson-idle7.png", "ferguson-idle8.png", 
-			"ferguson-idle9.png");
-	fergusonMoving = loadAnimation("ferguson-walk1.png", "ferguson-walk2.png", 
-			"ferguson-walk3.png", "ferguson-walk4.png", "ferguson-walk5.png", 
-			"ferguson-walk6.png", "ferguson-walk7.png", "ferguson-walk8.png", 
-			"ferguson-walk9.png", "ferguson-walk10.png");
+
 }
 
 function setup(){
 	createCanvas (800, 800);
 	CreateLevelsFromData(levelData.levels);
+	objects = new Group();
+  	for (var i = 0; i < 10; i++) {
+  		flower = loadImage("flower.png");
+  		flowerMonsters = loadImage("flowermonster.png");
+  		leaves = loadImage("leaf.png");
+  		leafSprite = createSprite(random(100, width-100), random(100, height-100));
+  		leafSprite.addImage(leaves);
+    	objects.add(leafSprite);
+  }
+
+  ferguson = createSprite(width/2, height/2, 10, 10);
+  ferguson.addAnimation("moving", "ferguson-walk1.png", "ferguson-walk3.png", 
+  			"ferguson-walk5.png", "ferguson-walk7.png", "ferguson-walk9.png");
+
 }
 
 function draw(){
 	background(255);
+
+	ferguson.position.x = mouseX;
+  	ferguson.position.y = mouseY;
+
+
 	// makeLevel(thisLevel);
 	levels[currentLevel].display();
 	fill(0);
 	textSize(18);
-	var x = 200;
-	var y = 600;
-	if(playerUp){
-		//ferguson up
-		animation(fergusonMoving, x, y);
-		y++;
-	}else if(playerDown){
-		//ferguson down
-		animation(fergusonMoving, x, y);
-		y--;
-	}else if(playerLeft){
-		//ferguson left
-		animation(fergusonMoving, x, y);
-		x--;
-	}else if(playerRight){
-		//ferguson right
-		animation(fergusonMoving, x, y);
-		x++;
-	}else {
-		//idle anim, still on screen
-		animation(ferguson, x, y);
-	}
+
+	ferguson.overlap(objects, getObjects);
+  	drawSprites();
+  	fill(255);
+  	noStroke();
+  	textSize(72);
+  	textAlign(CENTER, CENTER);
+  	if (objects.length > 0) {
+
+  	}
+  	else {
+    text("you win!", width/2, height/2);
+  	  //MAKE THIS GO TO NEXT SCENE
+  	}
+	
+}
+
+function getObjects(ferguson, object) {
+  object.remove();
+  score += 1;
 }
 
 function CreateLevelsFromData(data){
@@ -80,37 +90,4 @@ function Level (levelText, instructions, nextLevel){
 			text('' + this.instructions[i], 100, 150 + i * 50);
 		}
 	}
-}
-
-function keyPressed(){
-	if(key === 'W'){
-		playerUp = true;
-	}
-	if (key === 'S') {
-    	playerDown = true;
-  	}
-  	if (key === 'A') {
-    	playerLeft = true;
-  	}
-  	if (key === 'D') {
-    	playerDown = true;
-  	}
-  	if(key === 'space'){
-  		currentLevel = nextLevel;
-  	}
-}
-
-function keyReleased(){
-	if(key === 'W'){
-		playerUp = false;
-	}
-	if (key === 'S') {
-    	playerDown = false;
-  	}
-  	if (key === 'A') {
-    	playerLeft = false;
-  	}
-  	if (key === 'D') {
-    	playerRight = false;
-  	}
 }
