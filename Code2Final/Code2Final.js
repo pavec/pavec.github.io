@@ -9,6 +9,13 @@ var playerRight = false;
 
 var ferguson;
 
+var sceneState = {
+	START: 0;
+	LVL1: 1;
+	LVL2: 2;
+	LVL3: 3;
+	END: 4;
+};
 
 function preload(){
 	levelData = loadJSON('code2final-scenes.json');
@@ -71,7 +78,6 @@ function Level (levelText, instructions, nextLevel){
 		for(var i = 0; i < instructions.length; i++){
 			text('' + this.instructions[i], 100, 150 + i * 50);
 		}
-
 	}
 }
 
@@ -88,7 +94,6 @@ function keyPressed(){
   	if (key === 'D') {
     	playerDown = true;
   	}
-
   	if(key === 'space'){
   		currentLevel = nextLevel;
   	}

@@ -2,6 +2,7 @@
   "scenes": [
     {
       "levelText": "Welcome",
+      "instructions": [""],
       "nextLevel": [1]
     },
     {
@@ -20,7 +21,7 @@
       "nextLevel": [4]
     },
     {
-      "levelText": "Final Level",
+      "levelText": "You Won!",
       "instructions": [""],
       "nextLevel": [0]
     }
