@@ -63,7 +63,7 @@ function draw(){
 	}
 }
 
-function CreateLevelsFromData(){
+function CreateLevelsFromData(data){
 	for(var i = 0; i < data.length; i++){
 		levels.push(new Level (data[i].levelText, data[i].instructions, data[i].nextLevel));
 	}
