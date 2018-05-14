@@ -15,7 +15,7 @@ var sceneState = {
 	LVL2: 2;
 	LVL3: 3;
 	END: 4;
-};
+}
 
 function preload(){
 	levelData = loadJSON('code2final-scenes.json');
@@ -36,6 +36,7 @@ function setup(){
 
 function draw(){
 	background(255);
+	// makeLevel(thisLevel);
 	levels[currentLevel].display();
 	fill(0);
 	textSize(18);
