@@ -165,7 +165,7 @@ var score = 0;
 // }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1100, 1100);
   objects = new Group();
   for (var i = 0; i < 10; i++) {
     var c = createSprite(
