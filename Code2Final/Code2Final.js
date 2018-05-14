@@ -10,12 +10,12 @@ var playerRight = false;
 var ferguson;
 
 var sceneState = {
-	START: 0;
-	LVL1: 1;
-	LVL2: 2;
-	LVL3: 3;
-	END: 4;
-}
+	START: 0,
+	LVL1: 1,
+	LVL2: 2,
+	LVL3: 3,
+	END: 4
+};
 
 function preload(){
 	levelData = loadJSON('code2final-scenes.json');
