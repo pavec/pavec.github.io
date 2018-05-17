@@ -49,6 +49,7 @@ function draw() {
     text("you win!", width/2, height/2);
     //MAKE THIS GO TO NEXT SCENE
   }
+  //if(objects.length < 0){currentLevel = nextLevel}
 }
 function getObjects(ferguson, object) {
   object.remove();

@@ -9,13 +9,13 @@ var flowerMonsters;
 var flower;
 var leaves;
 
-var sceneState = {
-	START: 0,
-	LVL1: 1,
-	LVL2: 2,
-	LVL3: 3,
-	END: 4
-};
+// var sceneState = {
+// 	START: 0,
+// 	LVL1: 1,
+// 	LVL2: 2,
+// 	LVL3: 3,
+// 	END: 4
+// };
 
 function preload(){
 	levelData = loadJSON('code2final-scenes.json');
@@ -42,7 +42,8 @@ function setup(){
 }
 
 function draw(){
-	background(255);
+
+	background(8, 70, 22);
 
 	ferguson.position.x = mouseX;
   	ferguson.position.y = mouseY;
@@ -80,9 +81,10 @@ function CreateLevelsFromData(data){
 	}
 }
 
-function Level (levelText, instructions, nextLevel){
+function Level (levelText, instructions, objects, nextLevel){
 	this.levelText = levelText;
 	this.instructions = instructions;
+	this.objects = objects;
 	this.nextLevel = nextLevel;
 	this.display = function(){
 		text(levelText, 80, 80);

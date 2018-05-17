@@ -3,26 +3,31 @@
     {
       "levelText": "Welcome",
       "instructions": [""],
+      "objects": [],
       "nextLevel": [1]
     },
     {
       "levelText": "Level 1",
       "instructions": ["collect all objects to advance"],
+      "objects": ["flowers"],
       "nextLevel": [2]
     },
     {
       "levelText": "Level 2",
       "instructions": [""],
+      "objects": ["leaves"],
       "nextLevel": [3] 
     },
     {
       "levelText": "Level 3",
       "instructions": [""],
+      "objects": ["flowerMonsters"],
       "nextLevel": [4]
     },
     {
       "levelText": "You Won!",
       "instructions": [""],
+      "objects": [],
       "nextLevel": [0]
     }
   ]
