@@ -9,14 +9,6 @@ var flowerMonsters;
 var flower;
 var leaves;
 
-// var sceneState = {
-// 	START: 0,
-// 	LVL1: 1,
-// 	LVL2: 2,
-// 	LVL3: 3,
-// 	END: 4
-// };
-
 function preload(){
 	levelData = loadJSON('code2final-scenes.json');
 
@@ -27,12 +19,14 @@ function setup(){
 	CreateLevelsFromData(levelData.levels);
 	objects = new Group();
   	for (var i = 0; i < 10; i++) {
+  		var objImg;
   		flower = loadImage("flower.png");
   		flowerMonsters = loadImage("flowermonster.png");
   		leaves = loadImage("leaf.png");
-  		leafSprite = createSprite(random(100, width-100), random(100, height-100));
-  		leafSprite.addImage(leaves);
-    	objects.add(leafSprite);
+  		objectSprite = createSprite(random(100, width-100), random(100, height-100));
+  		objectSprite.addImage(objImg);
+
+    	objects.add(objectSprite);
   }
 
   ferguson = createSprite(width/2, height/2, 10, 10);
@@ -60,11 +54,13 @@ function draw(){
   	noStroke();
   	textSize(72);
   	textAlign(CENTER, CENTER);
-  	if (objects.length > 0) {
+  	// if (objects.length > 0) {
 
-  	}
-  	else {
-    text("you win!", width/2, height/2);
+  	// }
+  	if(objects.length < 1) {
+    // text("you win!", width/2, height/2);
+    // currentLevel = Level.nextLevel;
+    // levels[nextLevel].display();
   	  //MAKE THIS GO TO NEXT SCENE
   	}
 	
@@ -73,11 +69,14 @@ function draw(){
 function getObjects(ferguson, object) {
   object.remove();
   score += 1;
+  if(objects.length < 1){
+  	levels[currentLevel] = levels[currentLevel] + 1;
+  }
 }
 
 function CreateLevelsFromData(data){
 	for(var i = 0; i < data.length; i++){
-		levels.push(new Level (data[i].levelText, data[i].instructions, data[i].nextLevel));
+		levels.push(new Level (data[i].levelText, data[i].instructions, data[i].objects, data[i].nextLevel));
 	}
 }
 
@@ -90,6 +89,18 @@ function Level (levelText, instructions, objects, nextLevel){
 		text(levelText, 80, 80);
 		for(var i = 0; i < instructions.length; i++){
 			text('' + this.instructions[i], 100, 150 + i * 50);
+		}
+		if(objects.length < 1){
+			currentLevel = nextLevel;
+		}
+		if(this.objects = "flower"){
+			objImg = flower;
+		}
+		if(this.objects = "flowermonster"){
+			objImg = flowerMonsters;
+		}
+		if(this.objects = "leaf"){
+			objImg = leaves;
 		}
 	}
 }
